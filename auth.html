@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <script src="/socket.io/socket.io.js"></script>   
+    <title>Enter Chat!</title>
+    <style>
+        body {
+            overflow: hidden;
+            background-color: rgb(220, 190, 226);
+        }
+
+        #username {
+            display: inline-block;
+        }
+
+        .col-md-12 {
+            text-align: center; 
+        } 
+        .wrap { 
+           width: 500px; 
+           display: flex;
+           margin: auto;
+           flex-wrap: wrap; 
+           margin-top: 350px;
+        }
+    </style> 
+    
+    <script>
+        window.onload = function(){
+            let btn = document.getElementsByTagName('button')[0];
+            let inp = document.getElementsByTagName('input')[0];
+            btn.onclick=function(){
+                if(inp.value==''){
+                    alert('Invalid login!');
+                    return;
+                }
+
+                window.location.href =  '/' +inp.value;
+            }
+            
+        }
+    </script>        
+
+</head>
+<body>
+    <div >
+        <div class="col-md-12">
+            <div class="wrap">
+                <h1>Hi there!</h1>
+                <div class="input-group">
+                    <input type="text"  name="nick"  id="username" placeholder = "Username" />
+                    <input type="password"  name="pass" id="password" placeholder = "Password" />
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-lg btn-warning">Connect</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
